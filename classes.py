@@ -196,5 +196,3 @@ class SuperJob(Engine, ABC):
             print(f"Найдено ({len(values)}) вакансий.")
             self.__vacancies.extend(values)
             self.__params['page'] += 1
-
-
