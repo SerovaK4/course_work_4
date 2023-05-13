@@ -16,7 +16,7 @@ def main():
 
         while True:
             command = input(
-                "1 - Вывести ссписок вакансий;\n"
+                "1 - Вывести список вакансий;\n"
                 "2 - Сортировка по минимальной зарплате;\n"
                 "3 - Сортировка по минимальной зарплате (DESC);\n"
                 "4 - Сортировка по максимальной зарплате (DESC);\n"
@@ -32,6 +32,9 @@ def main():
                 vacancies = connector.sorted_vacancies_by_salary_from_desc()
             elif command == "4":
                 vacancies = connector.sorted_vacancies_by_salary_to_asc()
+            else:
+                print("Всееее ужасно")
+                exit()
 
             for vacancy in vacancies:
                 print(vacancy, end="\n\n")
