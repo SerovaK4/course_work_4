@@ -3,8 +3,7 @@ from classes import HeadHunter, SuperJob, Connector
 
 def main():
     vacancies_json = []
-    #keyword = input("Введите ключевое слово для поиска: ")
-    keyword = "Python"
+    keyword = input("Введите ключевое слово для поиска: ")
 
     hh = HeadHunter(keyword)
     sj = SuperJob(keyword)
@@ -16,13 +15,13 @@ def main():
 
         while True:
             command = input(
-                "1 - Вывести список вакансий;\n"
-                "2 - Сортировка по минимальной зарплате;\n"
-                "3 - Сортировка по минимальной зарплате (DESC);\n"
-                "4 - Сортировка по максимальной зарплате (DESC);\n"
-                "exit - для выхода.\n"
+                '1 - Вывести список вакансий;\n'
+                '2 - Отсортировать по минимальной зарплате по восходящей;\n'
+                '3 - Отсортировать по минимальной зарплате по нисходящей;\n'
+                '4 - Отсортировать по максимальной зарплате;\n'
+                'exit - Выход;\n'
             )
-            if command == "exit":
+            if command.lower() == "exit":
                 break
             elif command == "1":
                 vacancies = connector.select()
@@ -33,7 +32,7 @@ def main():
             elif command == "4":
                 vacancies = connector.sorted_vacancies_by_salary_to_asc()
             else:
-                print("Всееее ужасно")
+                print("Не корректные данные")
                 exit()
 
             for vacancy in vacancies:
